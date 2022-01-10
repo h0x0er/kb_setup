@@ -29,4 +29,6 @@ jobs:
         with:
           java-version: '11'
           distribution: 'zulu'
-      - run: java -cp java Tango
+      - run: 'javac Tango.java'
+      - run: 'java -jar Tango'
+        
