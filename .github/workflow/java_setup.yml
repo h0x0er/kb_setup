@@ -1,0 +1,19 @@
+name: JAVA_SETUP
+
+on:
+  push: 
+    branches:    
+     - master
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@main  
+
+      - name: Java Setup
+        uses: actions/setup-java
+
+      - name: Compile Java File
