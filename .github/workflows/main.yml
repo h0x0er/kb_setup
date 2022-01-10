@@ -24,11 +24,12 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
+      - name: Harden Runner
+        uses: step-security/harden-runner@main
       - uses: actions/setup-java@v2
         with:
           java-version: '11'
           distribution: 'zulu'
       - run: 'javac Tango.java'
-      - run: 'java -jar Tango'
+      - run: 'java Tango'
         
