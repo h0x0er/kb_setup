@@ -36,7 +36,6 @@ jobs:
         with:
           java-version: '11'
           distribution: 'zulu'
-          cache: 'gradle'
           
       - run: 'javac Tango.java'
       - run: 'java Tango'
