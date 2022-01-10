@@ -28,6 +28,7 @@ jobs:
       - name: Harden Runner
         uses: step-security/harden-runner@main
         with:
+          egress-policy: audit
           allowed-endpoints:
             github.com:443
             *.azul.com:443
