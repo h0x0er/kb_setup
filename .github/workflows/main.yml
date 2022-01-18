@@ -28,7 +28,6 @@ jobs:
         uses: step-security/harden-runner@main
         with:
           egress-policy: audit
-      -
-        name: Set up Docker Buildx
-        id: buildx
-        uses: docker/setup-buildx-action@v1
+
+      - name: Add msbuild to PATH
+        uses: microsoft/setup-msbuild@v1.1
