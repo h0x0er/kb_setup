@@ -29,5 +29,5 @@ jobs:
         with:
           egress-policy: audit
 
-      - name: Add msbuild to PATH
-        uses: microsoft/setup-msbuild@v1.1
+      - name: Static Web Apps Deploy
+        uses: Azure/static-web-apps-deploy@v1
