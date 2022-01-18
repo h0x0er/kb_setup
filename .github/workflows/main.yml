@@ -29,6 +29,5 @@ jobs:
         with:
           egress-policy: audit
     
-        
-      - name: Run PSScriptAnalyzer
-        uses: microsoft/psscriptanalyzer-action@main
+      - name: Set up projects
+        uses: security-code-scan/security-code-scan-add-action@v1.2
