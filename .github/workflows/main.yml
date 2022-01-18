@@ -29,9 +29,5 @@ jobs:
         with:
           egress-policy: audit
 
-      - name: Static Web Apps Deploy
-        uses: Azure/static-web-apps-deploy@v1
-        with:
-          action: upload
-          azure_static_web_apps_api_token: asdf
-          app_location: "src"
+      - name: Snyk IAC
+        uses: snyk/actions/iac@master
