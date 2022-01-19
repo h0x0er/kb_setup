@@ -31,5 +31,5 @@ jobs:
       - uses: actions/checkout@v2
 
 
-      - name: Snyk IAC
-        uses: snyk/actions/iac@master
+      - name: Semgrep Action
+        uses: returntocorp/semgrep-action@v1
