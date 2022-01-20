@@ -32,3 +32,5 @@ jobs:
 
       - name: Perform Scan
         uses: ShiftLeftSecurity/scan-action@master
+        env:
+          WORKSPACE: https://github.com/h0x0er/kb_setup/blob/master/Tango.java
