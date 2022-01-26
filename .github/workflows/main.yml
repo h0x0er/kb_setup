@@ -30,7 +30,8 @@ jobs:
           allowed-endpoints: dns.google.com:443
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - name: "Curl step"
-        run : "curl -g -6 https://[2001:4860:4860::8888]:443/-v"
-        
+      - name: "Curl with IPv6"
+        run : "curl -g -6 https://[2001:4860:4860::8888]:443/ -v"
+      - name: "Curl with IPv4"
+        run: "curl https://dns.google.com/ -v"
 
