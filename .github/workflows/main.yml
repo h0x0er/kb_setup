@@ -40,8 +40,8 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - name: "Curl with IPv4"
-        run: "curl https://dns.google.com/ -v"
+        run: "curl -g -4 https://dns.google.com/ -v"
       - name: "Curl with IPv6"
-        run : "curl -g -6 https://[2001:4860:4860::8888]:443/ -v"
+        run : "curl -g -6 https://dns.google.com:443/ -v"
 
 
