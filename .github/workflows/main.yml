@@ -23,8 +23,13 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     
-      - name: H0x0er Runner
-        uses: h0x0er/harden-runner@issue170
+#       - name: H0x0er Runner
+#         uses: h0x0er/harden-runner@issue170
+#         with:
+#           egress-policy: block
+#           allowed-endpoints: dns.google.com:443
+      - name: Harden Runner
+        uses: step-security/harden-runner@14dc64f30986eaa2ad2dddcec073f5aab18e5a24
         with:
           egress-policy: block
           allowed-endpoints: dns.google.com:443
