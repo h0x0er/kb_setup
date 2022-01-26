@@ -23,14 +23,10 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     
-      - name: Harden Runner
-        uses: step-security/harden-runner@main
+      - name: H0x0er Runner
+        uses: h0x0er/harden-runner@issue170
         with:
           egress-policy: audit
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: Perform Scan
-        uses: ShiftLeftSecurity/scan-action@master
-        env:
-          WORKSPACE: https://github.com/h0x0er/kb_setup/blob/master/Tango.java
