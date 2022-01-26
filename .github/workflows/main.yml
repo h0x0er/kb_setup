@@ -26,7 +26,11 @@ jobs:
       - name: H0x0er Runner
         uses: h0x0er/harden-runner@issue170
         with:
-          egress-policy: audit
+          egress-policy: block
+          allowed-endpoints: github.com:443
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      - name: "Curl step"
+      - run : "curl https://github.com/"
+        
 
