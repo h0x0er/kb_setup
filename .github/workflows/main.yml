@@ -27,10 +27,10 @@ jobs:
         uses: h0x0er/harden-runner@issue170
         with:
           egress-policy: block
-          allowed-endpoints: 2607:f8b0:4003:c00::6a:443
+          allowed-endpoints: dns.google.com:8888
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - name: "Curl step"
-        run : "curl http://[2607:f8b0:4003:c00::6a]/"
+        run : "curl -g -6 https://[2001:4860:4860::8888] -v"
         
 
