@@ -44,6 +44,6 @@ jobs:
 #       - name: "Curl with IPv6"
 #         run : "curl -g -6 https://[2001:4860:4860::8888]:443/ -v -v"
       - name: Ip6Tables
-        run: sudo ip6tabes
+        run: sudo ip6tables
 
 
