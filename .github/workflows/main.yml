@@ -43,8 +43,8 @@ jobs:
         run: "curl -g -4 https://dns.google.com/ -v"
 #       - name: "Curl with IPv6"
 #         run : "curl -g -6 https://[2001:4860:4860::8888]:443/ -v"
-      - name: "Curl with domain"
-        run: "curl -g -v https://dns.google.com/ -v"
+      - name: "Curl with IPv6 Request method"
+        run: "curl -g -6 -v https://dns.google.com/ -v"
       - name: Ip6Tables
         run: sudo ip6tables -L
       - name: Ip4Tables 
