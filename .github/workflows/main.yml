@@ -42,6 +42,6 @@ jobs:
       - name: "Curl with IPv4"
         run: "curl -g -4 https://dns.google.com/ -v"
       - name: "Curl with IPv6"
-        run : "curl -g -6 curl -g -6 https://[2001:4860:4860::8888]:443/ -v -v"
+        run : "curl -g -6 https://[2001:4860:4860::8888]:443/ -v -v"
 
 
