@@ -45,7 +45,7 @@ jobs:
 #         run : "curl -g -6 https://[2001:4860:4860::8888]:443/ -v -v"
       - name: Ip6Tables
         run: sudo ip6tables -L
-      - name: Ip4Tables
+      - name: Ip4Tables 
         run: sudo iptables -L
 
 
