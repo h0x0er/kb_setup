@@ -40,6 +40,8 @@ jobs:
           
       - name: Post DIG
         run: dig github.com
+      - name: Rerun DIG
+        run : dig github.com
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
 #       - uses: actions/checkout@v2
 
