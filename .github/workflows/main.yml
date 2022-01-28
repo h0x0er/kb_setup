@@ -28,26 +28,19 @@ jobs:
 #         with:
 #           egress-policy: block
 #           allowed-endpoints: dns.google.com:443
-#       - name: Harden Runner
-#         uses: step-security/harden-runner@14dc64f30986eaa2ad2dddcec073f5aab18e5a24
-#         with:
-#           egress-policy: block
-#           allowed-endpoints: 
-#             dns.google.com:443
-#             github.com:443
+      - name: Pre DIG
+        run : dig github.com
+      - name: Harden Runner
+        uses: step-security/harden-runner@14dc64f30986eaa2ad2dddcec073f5aab18e5a24
+        with:
+          egress-policy: block
+          allowed-endpoints: 
+            dns.google.com:443
+            github.com:443
           
-            
+      - name: Post DIG
+        run: dig github.com
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
 #       - uses: actions/checkout@v2
-      - name: "Curl with IPv4"
-        run: "curl -g -4 https://dns.google.com/ -v"
-#       - name: "Curl with IPv6"
-#         run : "curl -g -6 https://[2001:4860:4860::8888]:443/ -v"
-      - name: "Curl with IPv6 Request method"
-        run: "curl -g -6 -v https://dns.google.com/ -v"
-      - name: Ip6Tables
-        run: sudo ip6tables -L
-      - name: Ip4Tables 
-        run: sudo iptables -L
 
 
