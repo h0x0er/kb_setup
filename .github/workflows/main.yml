@@ -28,20 +28,24 @@ jobs:
 #         with:
 #           egress-policy: block
 #           allowed-endpoints: dns.google.com:443
-      - name: Pre DIG
-        run : dig github.com
+#       - name: Pre DIG
+#         run : dig github.com
       - name: Harden Runner
-        uses: step-security/harden-runner@14dc64f30986eaa2ad2dddcec073f5aab18e5a24
+        uses: step-security/harden-runner@14dc64f30986eaa2ad2dddcec073f5aab18e5a24 # v1
         with:
-          egress-policy: block
-          allowed-endpoints: 
-            dns.google.com:443
+          allowed-endpoints: "
+            app.fossa.com:443
             github.com:443
+            objects.githubusercontent.com:443
+            raw.githubusercontent.com:443"
+      - uses: actions/checkout@629c2de402a417ea7690ca6ce3f33229e27606a5 # v2
+      - uses: fossas/fossa-action@3764c5c941b43a8fdce352db1891f7e26e2e3cda # main
+
           
-      - name: Post DIG
-        run: dig github.com
-      - name: Rerun DIG
-        run : dig github.com
+#       - name: Post DIG
+#         run: dig github.com
+#       - name: Rerun DIG
+#         run : dig github.com
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
 #       - uses: actions/checkout@v2
 
