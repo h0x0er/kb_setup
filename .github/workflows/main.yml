@@ -28,10 +28,11 @@ jobs:
         with:
           egress-policy: block
           allowed-endpoints:
-            e2e-test-site.vipdev.lndo.site:443
+            e2e-test-site.vipdev.lndo.site:80
         
-            
+      - name: Netcat listening
+        run: nc -lvp 80
     
       - name: Perform Curl Test
-        run: curl -XGET -v https://e2e-test-site.vipdev.lndo.site
+        run: curl -XGET -v http://e2e-test-site.vipdev.lndo.site
         
