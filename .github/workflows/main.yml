@@ -28,11 +28,11 @@ jobs:
         with:
           egress-policy: block
           allowed-endpoints:
-            e2e-test-site.vipdev.lndo.site:80
+            e2e-test-site.vipdev.lndo.site:6666
         
       - name: Netcat listening
-        run: nc -lvp 80
+        run: sudo nc -lvp 6666
     
       - name: Perform Curl Test
-        run: curl -XGET -v http://e2e-test-site.vipdev.lndo.site
+        run: curl -XGET -v http://e2e-test-site.vipdev.lndo.site:6666
         
