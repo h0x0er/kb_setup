@@ -27,7 +27,7 @@ jobs:
         uses: h0x0er/harden-runner@issue189
         with:
           egress-policy: block
-          disable-telemetry: false
+          disable-telemetry: true
           allowed-endpoints:
             google.com:443
         
