@@ -26,7 +26,7 @@ jobs:
       - name: H0x0er Runner
         uses: h0x0er/harden-runner@issue189
         with:
-          egress-policy: audit
+          egress-policy: block
           disable-telemetry: false
           allowed-endpoints:
             google.com:443
@@ -35,5 +35,5 @@ jobs:
 #         run: sudo nc -l 6666
     
       - name: Perform Curl Test
-        run: curl -XGET -v https://google.com/
+        run: curl -XGET -v https://facebook.com/
         
