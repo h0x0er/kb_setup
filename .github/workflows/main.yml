@@ -24,7 +24,7 @@ jobs:
     steps:
     
       - name: H0x0er Runner
-        uses: h0x0er/harden-runner@agent189
+        uses: h0x0er/harden-runner@issue189
         with:
           egress-policy: audit
           disable-telemetry: true
