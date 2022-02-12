@@ -24,16 +24,15 @@ jobs:
     steps:
     
       - name: H0x0er Runner
-        uses: h0x0er/harden-runner@issue189
+        uses: h0x0er/harden-runner@agent162
         with:
-          egress-policy: block
-          disable-telemetry: true
+          egress-policy: audit
           allowed-endpoints:
-            google.com:443
+            e2e-test-site.vipdev.lndo.site:80
         
 #       - name: Netcat listening
 #         run: sudo nc -l 6666
     
       - name: Perform Curl Test
-        run: curl -XGET -v https://google.com/
+        run: curl -XGET -v http://e2e-test-site.vipdev.lndo.site/
         
