@@ -4,6 +4,8 @@ on:
   issues:
     types:
      - opened
+    branches:
+     - "*"
     
 permissions:
   contents: read
@@ -15,7 +17,7 @@ jobs:
       issues: write
     steps:
       - name: KBAnalysis
-        uses: h0x0er/kbanalysis@master
+        uses: h0x0er/kbanalysis@enchancements
         with:
           github-token: ${{secrets.GITHUB_TOKEN }}
           issue-id: ${{ github.event.issue.number}}
