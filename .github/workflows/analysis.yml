@@ -7,7 +7,8 @@ on:
      - reopened
     
 permissions:
-  contents: read
+  contents: write
+  pull-requests: write
 
 jobs:
   Analysis:
@@ -17,10 +18,15 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          repository: step-security/secure-workflows
+          repository: h0x0er/secure-workflows
           ref: main
       - name: KBAnalysis
         uses: h0x0er/kbanalysis@enchancements
         with:
           github-token: ${{secrets.GITHUB_TOKEN }}
           issue-id: ${{ github.event.issue.number}}
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{secrets.GITHUB_TOKEN}}
+          body: "Add KB for #${{github.event.issue.number}}"
