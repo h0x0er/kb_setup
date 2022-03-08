@@ -30,3 +30,4 @@ jobs:
         with:
           token: ${{secrets.GITHUB_TOKEN}}
           body: "Add KB for #${{github.event.issue.number}}"
+          branch: main
