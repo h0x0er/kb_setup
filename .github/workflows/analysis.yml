@@ -17,9 +17,6 @@ jobs:
       issues: write
     steps:
       - uses: actions/checkout@v3
-        with:
-          repository: h0x0er/kb_setup
-          ref: main
       - name: KBAnalysis
         uses: h0x0er/kbanalysis@enchancements
         with:
