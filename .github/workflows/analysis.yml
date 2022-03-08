@@ -19,6 +19,8 @@ jobs:
       
     steps:
       - uses: actions/checkout@v3
+        with:
+          repository: h0x0er/secure-workflows
       - name: KBAnalysis
         uses: h0x0er/kbanalysis@enchancements
         with:
@@ -28,5 +30,7 @@ jobs:
         uses: peter-evans/create-pull-request@v3
         with:
           token: ${{secrets.GITHUB_TOKEN}}
-          body: "Add KB for #${{github.event.issue.number}}"
+          body: "Fixes #${{github.event.issue.number}}"
+          commit-message: "added KB for issue#${{github.event.issue.number}}"
+          title: "Add KB for issue${{github.event.issue.number}}"
           branch: "issue#${{github.event.issue.number}}"
