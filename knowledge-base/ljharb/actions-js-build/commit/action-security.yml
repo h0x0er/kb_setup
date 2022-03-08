@@ -1,0 +1,2 @@
+name: 'GitHub Action for git commit' # ljharb/actions-js-build/commit
+# GITHUB_TOKEN not used
