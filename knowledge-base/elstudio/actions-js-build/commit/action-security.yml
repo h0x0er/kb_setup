@@ -1,0 +1,2 @@
+name: 'GitHub Action for git commit' # elstudio/actions-js-build/commit
+# GITHUB_TOKEN not used
