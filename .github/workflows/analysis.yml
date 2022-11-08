@@ -6,7 +6,7 @@ on:
      - opened
      - reopened
      - closed
-#   workflow_dispatch:
+  workflow_dispatch:
   schedule:
     - cron: '*/5 * * * *'
     
