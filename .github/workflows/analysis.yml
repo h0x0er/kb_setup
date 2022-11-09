@@ -7,8 +7,6 @@ on:
      - reopened
      - closed
   workflow_dispatch:
-  schedule:
-    - cron: '*/5 * * * *'
     
 permissions:
   contents: read
@@ -26,7 +24,7 @@ jobs:
         with:
           repository: h0x0er/kb_setup
       - name: KBAnalysis
-        uses: h0x0er/secure-workflows/kbanalysis@issue1376
+        uses: step-security/secure-workflows/kbanalysis@main
         with:
           github-token: ${{secrets.GITHUB_TOKEN }}
           issue-id: ${{ github.event.issue.number}}
