@@ -22,6 +22,8 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - name: Adding markdown
+        run: echo '### Hello world! :rocket:' >> $GITHUB_STEP_SUMMARY
     
       - name: H0x0er Runner
         uses: h0x0er/harden-runner@insights-in-summary
