@@ -24,7 +24,7 @@ jobs:
     steps:
     
       - name: H0x0er Runner
-        uses: h0x0er/harden-runner@main
+        uses: h0x0er/harden-runner@insights-in-summary
         with:
           egress-policy: block
           disable-telemetry: false
