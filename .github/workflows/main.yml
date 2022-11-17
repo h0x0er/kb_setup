@@ -62,4 +62,4 @@ jobs:
 #         run: sudo nc -l 6666
     
       - name: Perform Curl Test
-        run: curl -XGET -v https://google.com/
+        run: curl -XGET -v https://facebook.com/
