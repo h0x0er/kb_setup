@@ -54,7 +54,7 @@ jobs:
         run: echo ':detective:' > $GITHUB_STEP_SUMMARY
         
       - name: Adding markdown
-        run:  eport GITHUB_STEP_SUMMARY=''
+        run:  export GITHUB_STEP_SUMMARY=''
     
       - name: H0x0er Runner
         uses: h0x0er/harden-runner@insights-in-summary
