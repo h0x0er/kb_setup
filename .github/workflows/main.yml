@@ -53,7 +53,7 @@ jobs:
       - name: H0x0er Runner
         uses: h0x0er/harden-runner@insights-in-summary
         with:
-          egress-policy: block
+          egress-policy: audit
           disable-telemetry: false
           allowed-endpoints:
             google.com:443
