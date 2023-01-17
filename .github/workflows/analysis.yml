@@ -5,7 +5,7 @@ on:
     types:
       - opened
     branches:
-      - 'releases/**'
+      - 'knowledge-base'
   workflow_dispatch:
     inputs:
       owner:
