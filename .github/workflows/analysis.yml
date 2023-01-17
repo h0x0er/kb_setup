@@ -44,7 +44,7 @@ jobs:
         with:
           token: ${{secrets.GITHUB_TOKEN}}
           body: "Add content in `action-security.yml`\n"
-          commit-message: "added action-security.yml"
+          commit-message: "added action-security.yml for ${{inputs.owner}}/${{inputs.repo}}"
           title: "[KB] Add GitHub token permissions for ${{inputs.owner}}/${{inputs.repo}}"
           branch: "knowledge-base2"
           base: "knowledge-base"
