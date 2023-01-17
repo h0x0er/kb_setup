@@ -1,11 +1,12 @@
 name: KBAnalysis
 
 on:
-  issues:
+  pull_request:
     types:
      - opened
-     - reopened
-     - closed
+#      - reopened
+#      - closed
+    branches: ['knowledge-base']
   workflow_dispatch:
     inputs:
       owner:
@@ -42,7 +43,7 @@ jobs:
         uses: peter-evans/create-pull-request@v3
         with:
           token: ${{secrets.GITHUB_TOKEN}}
-          body: "Add content in action-security.yml"
+          body: "Add content in `action-security.yml`\n"
           commit-message: "added action-security.yml"
           title: "[KB] Add GitHub token permissions for ${{inputs.owner}}/${{inputs.repo}}"
           branch: "knowledge-base"
