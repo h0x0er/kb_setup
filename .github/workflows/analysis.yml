@@ -7,6 +7,14 @@ on:
      - reopened
      - closed
   workflow_dispatch:
+    inputs:
+      owner:
+        type: string
+        description: owner of the missing KB
+      repo:
+        type: string
+        description: repo of the missing KB
+        
     
 permissions:
   contents: read
@@ -24,15 +32,17 @@ jobs:
         with:
           repository: h0x0er/kb_setup
       - name: KBAnalysis
-        uses: h0x0er/secure-workflows/kbanalysis@issue1376
+        uses: h0x0er/secure-workflows/kbanalysis@kbanalysis-updates-poc
         with:
           github-token: ${{secrets.GITHUB_TOKEN }}
           issue-id: ${{ github.event.issue.number}}
+          owner: ${{inputs.owner}}
+          repo : ${{inputs.repo}}
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
           token: ${{secrets.GITHUB_TOKEN}}
-          body: "Fixes #${{github.event.issue.number}}"
-          commit-message: "added KB for issue#${{github.event.issue.number}}"
-          title: "Add KB for issue${{github.event.issue.number}}"
-          branch: "issue#${{github.event.issue.number}}"
+          body: "Add content in action-security.yml"
+          commit-message: "added action-security.yml"
+          title: "Add KB for ${{inputs.owner}}/${{inputs.repo}}"
+          branch: "knowledge-base"
