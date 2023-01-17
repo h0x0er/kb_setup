@@ -2,10 +2,10 @@ name: KBAnalysis
 
 on:
   pull_request:
-    types:
-      - opened
-    branches:
-      - 'knowledge-base'
+#     types:
+#       - opened
+#     branches:
+#       - 'knowledge-base'
   workflow_dispatch:
     inputs:
       owner:
