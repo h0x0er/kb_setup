@@ -36,6 +36,8 @@ jobs:
       - uses: actions/checkout@v3
         with:
           repository: h0x0er/kb_setup
+      - run: pwd
+      - run: ls knowledge-base
       - name: KBAnalysis
         uses: h0x0er/secure-workflows/kbanalysis@kbanalysis-updates-poc
         with:
