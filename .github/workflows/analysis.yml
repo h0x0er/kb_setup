@@ -14,7 +14,7 @@ on:
       repo:
         type: string
         description: repo of the missing KB
-      type:
+      state:
         type: string
         
         
@@ -43,7 +43,7 @@ jobs:
           issue-id: ${{ github.event.issue.number}}
           owner: ${{inputs.owner}}
           repo : ${{inputs.repo}}
-          type: ${{inputs.type}}
+          type: ${{inputs.state}}
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
