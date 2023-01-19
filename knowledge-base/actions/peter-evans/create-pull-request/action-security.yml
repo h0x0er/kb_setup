@@ -1,0 +1,12 @@
+name: 'Create Pull Request'
+github-token:
+  action-input:
+    input: token
+    is-default: true
+  permissions:
+    pull-requests: write
+    pull-requests-reason: to <reason here>
+    issues: write
+    issues-reason: to <reason here>
+    contents: read
+    contents-reason: to <reason here>
