@@ -1,0 +1,12 @@
+name: 'Labeler'
+github-token:
+  action-input:
+    input: repo-token
+    is-default: false
+  permissions:
+    pull-requests: read
+    pull-requests-reason: to <reason here>
+    issues: write
+    issues-reason: to <reason here>
+    contents: read
+    contents-reason: to <reason here>
