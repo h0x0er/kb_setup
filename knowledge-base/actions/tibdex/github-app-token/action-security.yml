@@ -1,0 +1,8 @@
+name: GitHub App token
+github-token:
+  action-input:
+    input: token
+    is-default: false
+  permissions:
+    undefined: write
+    undefined-reason: to <reason_here> # specify why undefined is used.
