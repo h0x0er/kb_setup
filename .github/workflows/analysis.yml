@@ -1,11 +1,6 @@
 name: KBAnalysis
 
 on:
-  pull_request:
-#     types:
-#       - opened
-#     branches:
-#       - 'knowledge-base'
   workflow_dispatch:
     inputs:
       owner:
@@ -13,10 +8,7 @@ on:
         description: owner of the missing KB
       repo:
         type: string
-        description: repo of the missing KB
-      state:
-        type: string
-        
+        description: repo of the missing KB     
         
     
 permissions:
@@ -27,7 +19,6 @@ jobs:
   Analysis:
     runs-on: ubuntu-latest
     permissions:
-      issues: write
       pull-requests: write
       contents: write
       actions: write
@@ -45,7 +36,6 @@ jobs:
           issue-id: ${{ github.event.issue.number}}
           owner: ${{inputs.owner}}
           repo : ${{inputs.repo}}
-          state: ${{inputs.state}}
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
@@ -54,3 +44,4 @@ jobs:
           title: "[KB] Add GitHub token permissions for ${{inputs.owner}}/${{inputs.repo}}"
           branch: "kb-${{inputs.owner}}-${{inputs.repo}}"
           base: "knowledge-base"
+          body: "PR added by kbanalysis workflow"
