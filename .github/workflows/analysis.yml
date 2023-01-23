@@ -30,7 +30,7 @@ jobs:
       - run: pwd
       - run: ls knowledge-base
       - name: KBAnalysis
-        uses: h0x0er/secure-workflows/kbanalysis@kbanalysis-updates-poc
+        uses: h0x0er/secure-workflows/kbanalysis@kbanalysis-refactored
         with:
           github-token: ${{secrets.GITHUB_TOKEN }}
           issue-id: ${{ github.event.issue.number}}
