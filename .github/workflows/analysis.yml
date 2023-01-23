@@ -30,10 +30,9 @@ jobs:
       - run: pwd
       - run: ls knowledge-base
       - name: KBAnalysis
-        uses: h0x0er/secure-workflows/kbanalysis@kbanalysis-refactored
+        uses: h0x0er/secure-workflows/kbanalysis@kbanalysis-pr-bug-fix
         with:
           github-token: ${{secrets.GITHUB_TOKEN }}
-          issue-id: ${{ github.event.issue.number}}
           owner: ${{inputs.owner}}
           repo : ${{inputs.repo}}
       - name: Create Pull Request
