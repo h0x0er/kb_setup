@@ -14,5 +14,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - run: docker pull aquasec/trivy
-      - run: docker run aquasec/trivy server &
+#       - run: docker pull aquasec/trivy
+#       - run: docker run aquasec/trivy server &
+      - run: wget https://github.com/aquasecurity/trivy/releases/download/v0.36.1/trivy_0.36.1_Linux-64bit.tar.gz -O /tmp/trivy.tar.gz
+      - run: cd /tmp; tar xf trivy.tar.gz
+      - run: ls /tmp
+      
