@@ -1,0 +1,6 @@
+name: "Harden Runner"
+github-token:
+  action-input:
+    input: token
+    is-default: true
+  permissions:
